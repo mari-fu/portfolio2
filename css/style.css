@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/** リセット */
+*{
+    font-family: 'メイリオ', Meiryo,'Arial','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
+    list-style: none;
+    text-decoration: none;
+}
+
+img{
+    vertical-align: bottom;
+}
+
+h1, h2, h3, p, ul, th,td{
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+}
+/** リセットEnd */
+
+/** モバイルファースト仕様のため481px以下 (スマホ用） */
+html{
+    background-color: #FFF
+}
+
+h1{
+    height: 40px;
+    margin: auto;
+}
+/** モバイルファースト481px以下 (スマホ用）End */
