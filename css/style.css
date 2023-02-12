@@ -403,12 +403,12 @@ footer p{
 }
 #top-button{
     position: fixed;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     border: solid 3px #888;
     bottom: 25px;
-    left: 20px;
+    left: 15px;
     background-color: #FFF;
     z-index: 10000;
 }
@@ -417,9 +417,9 @@ footer p{
 }
 #top-button p a{
     display: block;
-    line-height: 4;
+    line-height: 3.5;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     color: #888;
     cursor: pointer;
 }
