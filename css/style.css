@@ -198,7 +198,7 @@ h1{
     background-color: #FFF;
     opacity: 0;
     transition: opacity 400ms ease-in;
-    z-index: 10000;
+    z-index: 1000000;
 }
 #up-button p{
     display: block;
@@ -215,7 +215,7 @@ h1{
 
 /**TOP以外のh2*/
 #about h2, #skill h2, #work h2, #contact h2{
-    font-size: 24px;
+    font-size: 20px;
 }
 
 /**各コンテンツ　幅*/
@@ -266,15 +266,16 @@ h1{
     background-color: #b14848;
 }
 #about .title p{
-    padding-top: 5%;
+    padding-top: 20px;
+    font-size: 14px;
 }
 #about .text h3{
-    margin-top: 10%;
-    font-size: 20px;
+    margin-top: 40px;
+    font-size: 18px;
 }
 #about .text p{
-    margin: 5% auto;
-    font-size: 16px;
+    margin: 20px auto;
+    font-size: 14px;
 }
 /**ABOUTの設定 End */
 
@@ -282,11 +283,11 @@ h1{
 #skill{
     background-color: #77a190;
 }
-#skill #skills{
-    margin-top: 5%;
+#skills{
+    margin-top: 10px;
 }
 #skill #skills p{
-    font-size: 16px;
+    font-size: 14px;
 }
 #skill #softskills table{
     text-align: center;
@@ -298,14 +299,15 @@ h1{
 #skill #softskills table tr th{
     float: left;
     width: 100%;
-    margin-top: 10%;
-    font-size: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+    color:#1f50aa;
 }
 #skill #softskills table tr td{
     float: left;
     width: 100%;
-    margin-top: 3%;
-    font-size: 16px;
+    margin-top: 10px;
+    font-size: 14px;
 }
 #skill #softskills .star{
     position: absolute;
@@ -328,7 +330,7 @@ h1{
 }
 #work p{
     width: 85%;
-    margin: 10% auto;
+    margin: 20px auto;
     font-size: 16px
 }
 #work_list li {
@@ -389,7 +391,7 @@ footer p{
     transform: translate(-50%, -50%);
 }
 #work-page h3{
-    margin-top: 2.5%;
+    margin-top: 25px;
 }
 #work-page img{
     width: 40%;
@@ -456,32 +458,33 @@ footer p{
 
     /**ABOUTの設定 */
     #about h2, #skill h2, #work h2, #contact h2{
-        font-size: 28px;
+        font-size: 26px;
     }
     #about .title p{
-        font-size: 20px;
+        font-size: 18px;
     }
     #about .text h3{
-        margin-top: 15%;
+        margin-top: 60px;
         font-size: 24px;
     }
     #about .text p{
-        font-size: 20px;
         width: 75%;
+        margin-top: 50px;
+        font-size: 18px;
     }
     /**ABOUTの設定 End */
 
     /**SKILLの設定*/
     #skill #skills p{
-        font-size: 20px;
+        font-size: 16px;
     }
     #skill #softskills table tr th{
-        margin-top: 5%;
+        margin-top: 2.5%;
         margin-bottom: 0;
-        font-size: 25px;
+        font-size: 20px;
     }
     #skill #softskills table tr td{
-        font-size: 20px;
+        font-size: 18px;
     }
 
     /**SKILLの設定 End */
@@ -490,7 +493,8 @@ footer p{
 
     /**WORKの設定 */
     #work p{
-        font-size: 24px;
+        margin-top: 70px;
+        font-size: 20px;
     }
     /**WORKの設定 End */
 
@@ -508,10 +512,10 @@ footer p{
         font-size: 28px;
     }
     #work-page h3{
-        font-size: 24px;
+        font-size: 20px;
     }
     #work-page p{
-        font-size: 20px;
+        font-size: 18px;
     }
     #work-page img{
         width: 60%;
@@ -538,7 +542,7 @@ footer p{
         bottom: 0;
         background-color: #924;
         line-height: 3;
-        font-size: 24px;
+        font-size: 20px;
         opacity: 0.9;
     }
     #top nav{

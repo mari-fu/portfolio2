@@ -76,30 +76,32 @@ window.addEventListener('scroll', () => {
 
 
 /**upボタン　スクロールしたらフェードインフェードアウト */
-if(document.URL.match(/index/)){
-    let upButton = document.getElementById('up-button');
-    window.addEventListener("scroll",()=>{
-        
-        const currentY = window.scrollY;//スクロール高さ取得
-        if(currentY > 300){
-            setTimeout(function(){
-                upButton.style.opacity = 1;
-            },1);
-            upButton.classList.remove('up-button-hide');
-        } else {
-            setTimeout(function(){
-                upButton.style.opacity = 0;
-            },1);
-            upButton.classList.add('up-button-hide');
-        }
-    })
 
-    upButton.addEventListener("click", scroll_top);
-    // ページ上部へスムーズに移動
-    function scroll_top() {
-        window.scroll({ top: 0, behavior: "smooth" });
+
+    if(document.URL.match(/index/)){
+        let upButton = document.getElementById('up-button');
+        window.addEventListener("scroll",()=>{
+            
+            const currentY = window.scrollY;//スクロール高さ取得
+            if(currentY > 300){
+                setTimeout(function(){
+                    upButton.style.opacity = 1;
+                },1);
+                upButton.classList.remove('up-button-hide');
+            } else {
+                setTimeout(function(){
+                    upButton.style.opacity = 0;
+                },1);
+                upButton.classList.add('up-button-hide');
+            }
+        })
+
+        upButton.addEventListener("click", scroll_top);
+        // ページ上部へスムーズに移動
+        function scroll_top() {
+            window.scroll({ top: 0, behavior: "smooth" });
+        }
     }
-}
 
 
 /**topボタン　スクロールしたらフェードインフェードアウト */
