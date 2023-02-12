@@ -395,6 +395,8 @@ footer p{
 }
 #work-page p{
     font-size: 16px;
+    margin: 20px auto;
+    text-align: center;
 }
 #top-button{
     position: fixed;
@@ -407,6 +409,9 @@ footer p{
     background-color: #FFF;
     z-index: 10000;
 }
+#top-button p{
+    margin: 0 auto;
+}
 #top-button p a{
     display: block;
     line-height: 4;
@@ -414,6 +419,10 @@ footer p{
     font-size: 20px;
     color: #888;
     cursor: pointer;
+}
+
+#work-page footer p{
+    margin: 0 auto;
 }
 /**work.htmlの設定 End*/
 
@@ -506,6 +515,9 @@ footer p{
     #work-page img{
         width: 60%;
     }
+    #work-page footer p{
+        font-size: 14px;
+    }
     /**work.htmlの設定 End*/
 }
 /**481以上に適応　CSS（タブレット用）End */
@@ -521,7 +533,7 @@ footer p{
         z-index: 10000;
         position: fixed;
         width: 30%;
-        height: 70px;
+        height: 60px;
         bottom: 0;
         background-color: #924;
         line-height: 3;
@@ -531,7 +543,7 @@ footer p{
     #top nav{
         position: fixed;
         width: 70%;
-        height: 70px;
+        height: 60px;
         margin: 0;
         top: auto;
         left: auto;
@@ -549,7 +561,7 @@ footer p{
     
     #top nav ul li{
         width: 20%;
-        height: 70px;
+        height: 60px;
         vertical-align: middle;
         float: left;
         margin: 0;
@@ -627,6 +639,14 @@ footer p{
         width: 40px;
     }
     /**CONTACTの設定 End*/
+
+    /**footerの設定*/
+    footer p{
+        background-color: #000;
+        font-size: 14px;
+        height: 80px;
+    }
+    /**footerの設定 End*/
 
 
     /**work.htmlの設定*/
