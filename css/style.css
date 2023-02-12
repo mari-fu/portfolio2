@@ -1,33 +1,652 @@
 @charset "utf-8";
-
-/** リセット */
+/**リセット*/
 *{
-    font-family: 'メイリオ', Meiryo,'Arial','ヒラギノ角ゴシック','Hiragino Sans',sans-serif;
+    font-family: "MSゴシック",sans-serif;
     margin: 0;
     padding: 0;
     vertical-align: bottom;
     list-style: none;
     text-decoration: none;
 }
-
 img{
     vertical-align: bottom;
 }
-
-h1, h2, h3, p, ul, th,td{
-    font-size: 16px;
+h1, h2, h3, p, ul, table{
+    font-size: 20px;
     font-weight: normal;
+}
+/**リセットEnd*/
+
+
+
+html{
+    color: #EEE;
     text-align: center;
 }
-/** リセットEnd */
-
-/** モバイルファースト仕様のため481px以下 (スマホ用） */
-html{
-    background-color: #FFF
+nav, ul,li, a{
+    text-align: center;
+    color: #FFF;
+    background-color: transparent;
 }
+img{
+    max-width: 100%;
+}
+
+/**z-index 背景img 10, 各コンテンツテキスト 1000　*/
+#top, #about, #skill, #work, #contact{
+    height: 100vh;
+    /*jsでアドレスバーの高さを引いた画面サイズにリサイズ*/
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+}
+#about, #skill, #work, #contact{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#about img, #skill img, #work img{
+    z-index: 10;
+}
+
+
+
+
+/** loading */
+
+.loading {
+    position: fixed;
+    z-index: 10000000000;
+    width: 100%;
+    height: 100vh;
+    /*jsでアドレスバーの高さを引いた画面サイズにリサイズ*/
+    height: calc(var(--vh, 1vh) * 100);
+    top:0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+.loading.hide {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 500ms;
+}
+
+.loading .circle {
+    display: block;
+    position: relative;
+    top: calc( 50% - 20px );
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    border: 8px solid #FFF;
+    border-top: 7px solid #444;
+    border-radius: 50px;
+    animation: loading 900ms linear 0ms infinite normal both;
+}
+@keyframes loading {
+    0% { transform: rotate( 0deg ); }
+    100% { transform: rotate( 360deg ); }
+}
+.loading p{
+    position: relative;
+    top: 50%;
+    text-align: center;
+    transform: translate(0,-50%);
+    font-weight: bold;
+}
+/** loading End */
+
+
+
+
+/**TOP画像切替アニメーション*/
+.pictuire_container{
+    position: relative;
+    height: 100vh;
+    /*jsでアドレスバーの高さを引いた画面サイズにリサイズ*/
+    height: calc(var(--vh, 1vh) * 100);
+}
+.image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    object-fit: cover;
+    opacity: 0;
+    animation: change-img-anim 20s infinite;
+}
+.image:nth-of-type(1) {
+    animation: change-img-anim-first 20s infinite;
+    animation-delay: 0s;
+}
+.image:nth-of-type(2) {
+    animation-delay: 5s;
+}
+.image:nth-of-type(3) {
+    animation-delay: 10s;
+}
+.image:nth-of-type(4) {
+    animation-delay: 15s;
+}
+@keyframes change-img-anim-first {
+	0%{ opacity: 1;}
+    30%{ opacity: 1;}
+    36%{ opacity: 1;}
+    45%{ opacity: 0;}
+    100%{ opacity: 0;}
+}
+@keyframes change-img-anim {
+    0%{ opacity: 0;}
+    30%{ opacity: 1;}
+    36%{ opacity: 1;}
+    45%{ opacity: 0;}
+    100%{ opacity: 0;}
+}
+
+/**TOP画像切替アニメーション End*/
+
+
+
+
+/**481px以下 (スマホ用)はメディアクエリ外に記述 */
 
 h1{
-    height: 40px;
+    position: absolute;
+    z-index: 10000;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    font-size: 25px;
+    font-weight: bold;
+}
+#top nav{
+    position: absolute;
+    z-index: 10000;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #444;
+    opacity: 0.8;
+}
+
+#top nav ul li{
+    
+    font-size: 18px;
+    font-weight: bold;
+}
+#top nav a{
+    display: block;
+    padding: 10%;
+}
+.through{
+    text-decoration: overline;
+}
+
+#up-button{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 3px #888;
+    bottom: 30px;
+    left: 20px;
+    background-color: #FFF;
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+    z-index: 10000;
+}
+#up-button p{
+    display: block;
+    line-height: 4;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+.up-button-hide {
+    pointer-events: none;
+}
+/**各コンテンツ上下左右中央(TOP以外)*/
+
+
+/**TOP以外のh2*/
+#about h2, #skill h2, #work h2, #contact h2{
+    font-size: 24px;
+}
+
+/**各コンテンツ　幅*/
+.contents1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-100%, -50%);
+}
+
+.contents2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(0%, -50%);
+}
+.contents3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -100%);
+}
+.contents4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, 0%);
+}
+
+.fade-in {
+    opacity: 0;
+    transition-duration: 1000ms;
+    transition-property: opacity, transform;
+}
+
+.scroll-in {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+
+/**ABOUTの設定 */
+#about{
+    background-color: #b14848;
+}
+#about .title p{
+    padding-top: 5%;
+}
+#about .text h3{
+    margin-top: 10%;
+    font-size: 20px;
+}
+#about .text p{
+    margin: 5% auto;
+    font-size: 16px;
+}
+/**ABOUTの設定 End */
+
+/**SKILLの設定*/
+#skill{
+    background-color: #77a190;
+}
+#skill #skills{
+    margin-top: 5%;
+}
+#skill #skills p{
+    font-size: 16px;
+}
+#skill #softskills table{
+    text-align: center;
     margin: auto;
 }
-/** モバイルファースト481px以下 (スマホ用）End */
+#skill #softskills table tr{
+    width: 100%;
+}
+#skill #softskills table tr th{
+    float: left;
+    width: 100%;
+    margin-top: 10%;
+    font-size: 20px;
+}
+#skill #softskills table tr td{
+    float: left;
+    width: 100%;
+    margin-top: 3%;
+    font-size: 16px;
+}
+#skill #softskills .star{
+    position: absolute;
+    color: #FF0;
+    animation: starmove 3s infinite ;
+}
+@keyframes starmove {
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
+}
+/**SKILLの設定 End */
+
+/**WORKの設定 */
+#work {
+    background-color: #a38c06;
+}
+#work p{
+    width: 85%;
+    margin: 10% auto;
+    font-size: 16px
+}
+#work_list li {
+    float: left;
+    width: 40%;
+    margin: auto 5%;
+}
+
+#work_list li a{
+    display: block;
+}
+
+
+/**WORKの設定 End */
+
+
+/**CONTACTの設定*/
+#contact{
+    margin-top: 10%;
+    color: #000;
+}
+#contact li{
+    width: 10%;
+    margin: 20% auto;
+}
+#contact li a{
+    display: block;
+}
+/**CONTACTの設定 End*/
+
+/**footerの設定*/
+footer p{
+    background-color: #000;
+    font-size: 14px;
+    height: 25px;
+}
+/**footerの設定 End*/
+
+/**work.htmlの設定*/
+#work-page h1{
+    display: none;
+}
+#work-page #top{
+    height: 0;
+}
+#work-page #top nav{
+    display: none;
+}
+
+.work_hidden{
+    display: none;
+}
+#work-page .contents{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+}
+#work-page h3{
+    margin-top: 2.5%;
+}
+#work-page img{
+    width: 40%;
+}
+#work-page p{
+    font-size: 16px;
+}
+#top-button{
+    position: fixed;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 3px #888;
+    bottom: 25px;
+    left: 20px;
+    background-color: #FFF;
+    z-index: 10000;
+}
+#top-button p a{
+    display: block;
+    line-height: 4;
+    font-weight: bold;
+    font-size: 20px;
+    color: #888;
+    cursor: pointer;
+}
+/**work.htmlの設定 End*/
+
+
+/**481px以下 (スマホ用）End */
+
+
+
+
+/**481以上に適応　CSS（タブレット用） */
+@media screen and (min-width:481px){
+    .tb-none{
+        display: none;
+    }
+    h1{
+        font-size: 30px;
+    }
+
+    #top nav{
+        width: 35%;
+    }
+    #top nav ul li{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    #top nav a{
+        padding: 10%;
+    }
+
+
+    /**ABOUTの設定 */
+    #about h2, #skill h2, #work h2, #contact h2{
+        font-size: 28px;
+    }
+    #about .title p{
+        font-size: 20px;
+    }
+    #about .text h3{
+        margin-top: 15%;
+        font-size: 24px;
+    }
+    #about .text p{
+        font-size: 20px;
+        width: 75%;
+    }
+    /**ABOUTの設定 End */
+
+    /**SKILLの設定*/
+    #skill #skills p{
+        font-size: 20px;
+    }
+    #skill #softskills table tr th{
+        margin-top: 5%;
+        margin-bottom: 0;
+        font-size: 25px;
+    }
+    #skill #softskills table tr td{
+        font-size: 20px;
+    }
+
+    /**SKILLの設定 End */
+
+
+
+    /**WORKの設定 */
+    #work p{
+        font-size: 24px;
+    }
+    /**WORKの設定 End */
+
+
+    /**CONTACTの設定*/
+    #contact li{
+        width: 5%;
+        margin: 10% auto;
+    }
+    /**CONTACTの設定 End*/  
+
+
+    /**work.htmlの設定*/
+    #work-page h2{
+        font-size: 28px;
+    }
+    #work-page h3{
+        font-size: 24px;
+    }
+    #work-page p{
+        font-size: 20px;
+    }
+    #work-page img{
+        width: 60%;
+    }
+    /**work.htmlの設定 End*/
+}
+/**481以上に適応　CSS（タブレット用）End */
+
+
+
+
+
+/**960以上に適応　CSS(PC用) */
+@media screen and (min-width:960px){
+
+    h1{
+        z-index: 10000;
+        position: fixed;
+        width: 30%;
+        height: 70px;
+        bottom: 0;
+        background-color: #924;
+        line-height: 3;
+        font-size: 24px;
+        opacity: 0.9;
+    }
+    #top nav{
+        position: fixed;
+        width: 70%;
+        height: 70px;
+        margin: 0;
+        top: auto;
+        left: auto;
+        bottom: 0;
+        right: 0;
+        transform: none;
+        background-color: #924;
+        opacity: 0.9;
+    }
+    .through{
+        text-decoration: overline;
+        background-color: #655555;
+        height: 100%;
+    }
+    
+    #top nav ul li{
+        width: 20%;
+        height: 70px;
+        vertical-align: middle;
+        float: left;
+        margin: 0;
+        font-size: 20px;
+    }
+    #top nav ul li a{
+        display: block;
+    }
+    #up-button{
+        display: none;
+    }
+
+    /**TOP以外のh2*/
+    #about h2, #skill h2, #work h2, #contact h2{
+        font-size: 36px;
+    }
+
+    .contents1, .contents2, .contents3, .contents4{
+        width: 950px;
+    }
+
+    /**ABOUTの設定 */
+    #about .title p{
+        font-size: 20px;
+    }
+    #about .text h3{
+        margin-top: 5%;
+        font-size: 28px;
+    }
+    #about .text p{
+        font-size: 20px;
+    }
+    /**ABOUTの設定 End */
+
+    /**SKILLの設定*/
+
+    #skill #skills p{
+        font-size: 20px;
+    }
+    #skill #softskills table tr {
+        float: left;
+        width: 33.3%;
+        margin-top: 30px;
+    }
+    #skill #softskills table tr th{
+        width: 100%;
+        font-size: 20px;
+    }
+    #skill #softskills table tr td{
+        width: 100%;
+        font-size: 20px;
+    }
+    #skill #softskills td:nth-child(2){
+        font-size: 24px;
+    }
+    /**SKILLの設定 End */
+
+    /**WORKの設定 */
+    #work_list img{
+        width: 80%;
+    }
+    /**WORKの設定 End */
+
+    /**CONTACTの設定*/
+    #contact{
+        margin: 0;
+    }
+    #contact #contact-text{
+        height: 300px;
+    }
+    #contact li{
+        margin-top: 50px;
+    }
+    #contact li img{
+        width: 40px;
+    }
+    /**CONTACTの設定 End*/
+
+
+    /**work.htmlの設定*/
+    #work-page h1{
+        display: block;
+    }
+    #work-page #top{
+        height: 0;
+    }
+    #work-page #top nav{
+        display: block;
+    }
+    #work-page h3{
+        margin-top: 2%;
+    }
+    #work-page img{
+        width: 400px;
+    }
+    #top-button{
+        display: none;
+    }
+    /**work.htmlの設定 End*/
+}

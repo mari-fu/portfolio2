@@ -1,107 +1,152 @@
 <!DOCTYPE html>
 <html lang="ja">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1,user-scalable=no">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <noscript>ご利用のブラウザではJavaScriptが無効です</noscript>
-        <title>FUMA's&nbsp;PORTFORIO</title>
-    </head>
-    <body>
-        <div id="smartphone-frame">
-            <header>
-                <nav>
-                    <ul>
-                        <li><a href="">TOP</a></li>
-                        <li><a href="">ABOUT</a></li>
-                        <li><a href="">SKILL</a></li>
-                        <li><a href="">FAVORITE</a></li>
-                        <li><a href="">CONTACT</a></li>
-                    </ul>
-                </nav>
-            </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <noscript>ご利用のブラウザではJavaScriptが無効です。</noscript>
+    <title>FUMA's&nbsp;PORTFORIO</title>
+</head>
+<body>
 
-            <main>
-                <h1>FUMA's&nbsp;PORTFORIO</h1>
-                <article id="about">
-                    <div id="about-text">
+    <!-- loading -->
+    <div class="loading">
+        <div class="circle"></div>
+        <p>loading</p>
+    </div>
+    <!-- loading End -->
+    
+    <header>
+        <h1>FUMA's&nbsp;PORTFORIO</h1>
+    </header>
+    
+    <main>
+
+        <section id="top">
+            <nav>
+                <ul>
+                    <li id="navtop" class="through"><a href="#top">TOP</a></li>
+                    <li id="navabout"><a href="#about">ABOUT</a></li>
+                    <li id="navskill"><a href="#skill">SKILL</a></li>
+                    <li id="navwork"><a href="#work">WORK</a></li>
+                    <li id="navcontact"><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="pictuire_container">
+                <img class="image" src="img/top1.jpg">
+                <img class="image" src="img/top2.jpg">
+                <img class="image" src="img/top3.jpg">
+                <img class="image" src="img/top4.jpg">
+            </div>
+            <div id="up-button" class="up-button-hide">
+                <p>&#8593;UP</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="contents1 fade-in fade-in-up">
+                <div id="about-text">
+                    <div class="title">
                         <h2>ABOUT</h2>
-                        <p>FUMAです</p>
-                        <section id="more-info">
-                            <h3>SCHOOLTIME</h3>
-                            <p>想像力を働かせることが好きで工業高校へ</p>
-                            <h3>NOW</h3>
-                            <p>このポートフォリオは初めて作成した作品です<br>
-                            知らないことばかりで大変でしたがコードを理解してから書く。コピペしない。と決めて作成しました<br>挑戦してよかったと思えた作品です</p>
-                        </section>
+                        <p>パソコンはなぜ動く？<br>という疑問からプログラミングを勉強</p>
                     </div>
-                </article>
+                    <div class="text">
+                            <h3>ポートフォリオについて</h3>
+                                <p>このポートフォリオは初めて作成した作品です<br>
+                                    コードを理解してから書く・コピペしない<br>と決めて作成しました<br>
+                                    CSSを使用したアニメーション・jQueryを使用せず素のJavaScriptがとても勉強になり挑戦して良かったと思えた作品です<br>
+                                使用スキル:HTML/CSS/JavaScript</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <article id="skill">
-                    <div id="skill-text">
-                        <h2>SKILL</h2>
-                        <p>HTML/CSS/JavaScript/PHP/MySQL<br>
-                            プログラミングスクールで半年間学びました。<br>
-                            現在は勉強を兼ねて趣味でシフト管理システムを作成中です
-                        </p>
-                    </div>
-                    <div id="soft-skills">
-                        <table>
-                            <tr>
-                                <th>Illustrator</th>
-                                <td>★★☆☆☆</td>
-                                <td>webデザイン、前職で簡易地図作成などに使用</td>
-                                
-                            </tr>
-                            <tr>
-                                <th>Photoshop</th>
-                                <td>★☆☆☆☆</td>
-                                <td>簡単な画像の加工修正</td>
-                            </tr>
-                            <tr>
-                                <th>AutoCAD/JW_CAD</th>
-                                <td>★★★★☆</td>
-                                <td>前職で道路・建物などの２Dの図面修正に使用</td>
-                            </tr>
-                        </table>
-                    </div>
-                </article>
 
-                <article id="favorite">
-                    <h2>FAVORITE</h2>
-                        <section>
-                        <div id="favorite_pic">
-                            <ul>
-                                <li><img src="img/favorite_game.jpg" alt="game" class="sub"></li>
-                                <li><img src="img/favorite_animal.jpg" alt="animal" class="sub"></li>
-                                <li><img src="img/favorite_travel.jpg" img="travel" alt="travel" id="main" class="sub"></li>
-                                <li><img src="img/favorite_sports.jpg" alt="sports" class="sub"></li>
-                                <li><img src="img/favorite_game.jpg" alt="game" class="sub"></li>
-                            </ul>
+        <section id="skill">
+            <div class="contents2 fade-in fade-in-up">
+                <div id="skill-text">
+                    <h2>SKILL</h2>
+                    <div id="skills">
+                        <div id="webskills">
+                            <p
+                            >HTML/CSS/JavaScript/PHP/MySQL<br>
+                            プログラミングスクールで１年間学びました<br>
+                                現在は勉強を兼ねて趣味で<br>シフト管理システムを作成中です</p>
                         </div>
-                        <div id="explain">
-                            <div id="explain-head">
-                                <div id="img-control">
-                                    <p id="prev">&lt;</p>
-                                    <p id="next">&gt;</p>
-                                </div>
-                                <h3>SPORTS</h3>
-                            </div>
-                            <p class="text">体を動かすことも、観戦するのも好きです</p>
+                        <div id="softskills">
+                            <table>
+                                <tr>
+                                    <th>Illustrator</th>
+                                    <td><span class="star">★★</span>☆☆☆☆☆</td>
+                                    <td>webデザイン、<br>
+                                        前職で簡易地図作成などに使用</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <th>Photoshop</th>
+                                    <td><span class="star">★</span>☆☆☆☆☆</td>
+                                    <td>簡単な画像の加工修正</td>
+                                </tr>
+                                <tr>
+                                    <th>AutoCAD/JW_CAD</th>
+                                    <td><span class="star">★★★★</span>☆☆☆☆☆</td>
+                                    <td>前職で道路・建物などの２Dの図面修正に使用<br>
+                                    現在は独学でBlenderを使用し3Dモデルを作成中</td>
+                                </tr>
+                            </table>
                         </div>
-                    </section>
-                </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <article id="contact">
+
+        <section id="work">
+            <div class="contents3 fade-in">
+                <div id="work-text">
+                    <h2>WORK</h2>
+                    <p>今まで作成した作品です</p>
+                </div>
+                <div id="work_list">
+                    <ol>
+                        <li>
+                            <a href="work.html#work1">
+                                <image src="img/work1.jpg"></image>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="work.html#work2">
+                                <image src="img/work2.jpg"></image>
+                            </a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="contact">
+            <div class="contents4 fade-in fade-in-up">
+                <div id="contact-text">
                     <h2>CONTACT</h2>
                     <ul>
-                        <li><a href="#"><img src="img/google-icon.svg" alt="gmail"></a></li>
+                        <li>
+                            <a href="mailto:iew.88fuma@gmail.com">
+                                <img src="img/google-icon.svg" alt="gmail">
+                            </a>
+                        </li>
                     </ul>
-                </article>
-            </main>
+                </div> 
+            </div>
+        </section>
 
-            <footer></footer>
-        </div>
-        <script src="js/app.js"></script>
-    </body>
+
+        <footer>
+            <p id="copy">&copy;2023&nbsp;FUMA's&nbsp;PORTFORIO.</p>
+        </footer>
+    </main>
+
+
+    <script src="js/app.js"></script>
+</body>
 </html>
